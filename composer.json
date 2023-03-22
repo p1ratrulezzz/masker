@@ -1,0 +1,19 @@
+{
+  "name": "p1ratrulezzz/masker",
+  "description": "Masks string values",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "P1ratRuleZZZ",
+      "email": "developer@p1ratrulezzz.me"
+    }
+  ],
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "P1ratRuleZZZ\\Masker\\": "src/Masker"
+    }
+  }
+}
