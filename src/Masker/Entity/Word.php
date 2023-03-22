@@ -3,7 +3,7 @@
 namespace P1ratRuleZZZ\Masker\Entity;
 
 use P1ratRuleZZZ\Masker\Entity\EntityAbstract;
-use Masker\Options;
+use P1ratRuleZZZ\Masker\Options;
 
 class Word extends EntityAbstract {
 
@@ -13,10 +13,9 @@ class Word extends EntityAbstract {
     public function mask() : EntityInterface {
         if (!$this->isMasked()) {
             $this->maskedValue = $this->value;
-            $len = mb_strlen($this->value);
-            $min = $this->options->getOption('min');
-            if ($len > $min) {
-                $this->maskedValue = mb_substr($this->value, 0, $min) . str_repeat($this->options->getOption('char'), $this->options->getOption('chars_max', $len - $min));
+            $min = $this->getPresaveChars();
+            if ($this->length() > $min) {
+                $this->maskedValue = mb_substr($this->value, 0, $min) . $this->getMaskTemplate($this->options->getOption('chars_max', $this->length() - $min));
             }
         }
 

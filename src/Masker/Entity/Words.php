@@ -4,7 +4,7 @@ namespace P1ratRuleZZZ\Masker\Entity;
 
 use P1ratRuleZZZ\Masker\Entity\EntityAbstract;
 use P1ratRuleZZZ\Masker\Entity\Word;
-use Masker\Options;
+use P1ratRuleZZZ\Masker\Options;
 
 class Words extends EntityAbstract {
 
